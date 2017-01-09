@@ -30,6 +30,7 @@ We are going to make a nice open todo list application. For testing and viewing 
 	* Make sure that the system returns the appropriate 404 error message if the user is not found
 
 ## Hard Mode
+* Write tests for all of the get and post endpoints
 * Using AJAX create a front end with JQuery and HTML
 	* Have one page that will allow for listing all of the users
 		* Allow the page to create a new user
