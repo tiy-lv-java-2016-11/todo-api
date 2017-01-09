@@ -28,6 +28,7 @@ We are going to make a nice open todo list application. For testing and viewing 
 * Create the CRUD end points for the todo list items
 	* All todo list items will be added via urls starting with `/{userId}/todos/`
 	* Make sure that the system returns the appropriate 404 error message if the user is not found
+* Write tests for creation of both user and todo list
 
 ## Hard Mode
 * Write tests for all of the get and post endpoints
