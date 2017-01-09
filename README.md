@@ -11,13 +11,11 @@ We are going to make a nice open todo list application. For testing and viewing 
 * Create a user entity which will be stored in the postgres database
 	* id
 	* username
-	* password
 	* email
 	* firstName
 	* lastName
 * Create a CRUD controller for the User entity
 	* All endpoints will start with `/users/`
-	* Creation will take a plain text password that the backend will hash before saving
 	* No need to ever allow the user to change their password in this mode
 * Create a todo list item entity with the following
 	* id
@@ -32,6 +30,10 @@ We are going to make a nice open todo list application. For testing and viewing 
 
 ## Hard Mode
 * Write tests for all of the get and post endpoints
+* Add a password field to `User`
+* On creation the password is passed in as plain text but hashed for security before saving to the database
+
+## Nightmare Mode
 * Using AJAX create a front end with JQuery and HTML
 	* Have one page that will allow for listing all of the users
 		* Allow the page to create a new user
@@ -45,7 +47,7 @@ We are going to make a nice open todo list application. For testing and viewing 
 		* Allow the user to delete
 		* Allow the user to edit the todo list item
 
-## Nightmare Mode
+## Epic Mode
 * Style the page with CSS
 * Make the forms for creation of items and users collapsable so that they are only displayed on a action like someone clicking a link
 
