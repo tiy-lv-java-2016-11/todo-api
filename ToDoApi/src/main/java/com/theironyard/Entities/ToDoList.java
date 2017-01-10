@@ -17,7 +17,7 @@ public class ToDoList {
     private String description;
     @Column(nullable = false)
     private LocalDate dueDate;
-    @Column(nullable = false)
+    @ManyToOne
     private User user;
 
     public ToDoList() {

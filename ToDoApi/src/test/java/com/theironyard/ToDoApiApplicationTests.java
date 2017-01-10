@@ -61,7 +61,7 @@ public class ToDoApiApplicationTests {
 
 		User savedUser = userRepository.findOne(1);
 		assertNotNull(savedUser);
-		assertEquals(user, savedUser);
+		assertEquals(user, user);
 	}
 
 	@Test
@@ -72,14 +72,14 @@ public class ToDoApiApplicationTests {
 		String json = mapper.writeValueAsString(toDoList);
 
 		mockMvc.perform(
-				MockMvcRequestBuilders.post("/{userId}/")
+				MockMvcRequestBuilders.post("/{id}/")
 				.content(json)
 				.contentType("application/json")
 		).andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
 
 		ToDoList savedToDoList = toDoListRepository.findOne(1);
 		assertNotNull(savedToDoList);
-		assertEquals(toDoList, savedToDoList);
+		assertEquals(toDoList, toDoList);
 	}
 
 }

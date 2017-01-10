@@ -37,39 +37,39 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(path = "/users/{userId}", method = RequestMethod.GET)
-    public User getUser(@PathVariable int userId) throws Exception {
-        User user = userRepository.findOne(userId);
+    @RequestMapping(path = "/users/{id}", method = RequestMethod.GET)
+    public User getUser(@PathVariable int id) throws Exception {
+        User user = userRepository.findOne(id);
         if(user == null){
             throw new Exception();
         }
         return user;
     }
 
-    @RequestMapping(path = "/users/{userId}", method = RequestMethod.PUT)
-    public User replaceUser(@PathVariable int userId, @RequestBody User user){
+    @RequestMapping(path = "/users/{id}", method = RequestMethod.PUT)
+    public User replaceUser(@PathVariable int id, @RequestBody User user){
         userRepository.save(user);
         return user;
     }
 
-    @RequestMapping(path = "/users/{userId}", method = RequestMethod.DELETE)
-    public User deleteUser(@PathVariable int userId){
-        userRepository.delete(userId);
+    @RequestMapping(path = "/users/{id}", method = RequestMethod.DELETE)
+    public User deleteUser(@PathVariable int id){
+        userRepository.delete(id);
         return null;
     }
 
-    @RequestMapping(path = "/{userId}/todos/")
-    public List<ToDoList> getToDoList(@PathVariable int userId) throws Exception {
-        User user = userRepository.findOne(userId);
+    @RequestMapping(path = "/{id}/todos/")
+    public List<ToDoList> getToDoList(@PathVariable int id) throws Exception {
+        User user = userRepository.findOne(id);
         if(user == null){
             throw new Exception();
         }
         return toDoListRepository.findAllByUser(user);
     }
 
-    @RequestMapping(path = "/{userId}/todos", method = RequestMethod.POST)
-    public ToDoList createToDoList(@PathVariable int userId, @RequestBody ToDoList toDoList) throws Exception {
-        User user = validateUser(userId);
+    @RequestMapping(path = "/{id}/todos", method = RequestMethod.POST)
+    public ToDoList createToDoList(@PathVariable int id, @RequestBody ToDoList toDoList) throws Exception {
+        User user = validateUser(id);
         toDoList.setUser(user);
         toDoListRepository.save(toDoList);
         return toDoList;
@@ -78,8 +78,8 @@ public class UserController {
 
 
 
-        public User validateUser(int userId) throws Exception {
-        User user = userRepository.findOne(userId);
+        public User validateUser(int id) throws Exception {
+        User user = userRepository.findOne(id);
         if(user == null){
             throw new Exception();
         }
