@@ -73,7 +73,7 @@ public class TodoApplicationTests {
         String json = mapper.writeValueAsString(todo);
 
         mockMvc.perform(
-                MockMvcRequestBuilders.post("users/1/todos/")
+                MockMvcRequestBuilders.post("/users/1/todos/")
                         .content(json)
                         .contentType("application/json")
         ).andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
